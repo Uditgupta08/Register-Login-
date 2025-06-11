@@ -239,6 +239,135 @@ body {
 	text-decoration: underline;
 }
 
+/* Enhanced Error Message Styling */
+.error-message {
+    background: #fee2e2; /* Light red background */
+    color: #dc2626; /* Darker red text */
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #fca5a5; /* Red border */
+    display: block; /* Make sure it's visible */
+    animation: shake 0.5s ease-in-out; /* Add shake animation */
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15); /* Subtle red shadow */
+}
+
+/* Add shake animation for more attention */
+@keyframes shake {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-5px); }
+    30% { transform: translateX(5px); }
+    60% { transform: translateX(-3px); }
+    90% { transform: translateX(3px); }
+}
+
+/* Style input fields with error state */
+.input-field.error {
+    border: 2px solid #dc2626 !important;
+    background-color: #fef2f2;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.input-field.error:focus {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2) !important;
+}
+
+/* Error icon for input fields */
+.input-group.error {
+    position: relative;
+}
+
+.input-group.error::after {
+    content: "⚠";
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    color: #dc2626;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* Label styling for error state */
+.input-label.error {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* Alternative: More prominent error banner */
+.error-banner {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+    animation: slideDown 0.3s ease-out;
+}
+
+.error-banner::before {
+    content: "❌";
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toast-style error notification */
+.error-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #dc2626;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+    z-index: 1000;
+    animation: slideInRight 0.3s ease-out;
+    max-width: 300px;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Button error state (optional) */
+.sign-in-button.error {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 	.login-container {

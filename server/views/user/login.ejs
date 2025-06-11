@@ -50,7 +50,9 @@
                         <div class="form-wrapper">
                             <h2 class="form-title">Welcome back</h2>
                             <% if (error) { %>
-                                <div class="error-message" id="loginError"><%= error %></div>
+                                <div class="error-message" id="loginError">
+                                    <strong>Login Failed:</strong> <%= error %>
+                                </div>
                             <% } %>
                             <form action="/loginUser " method="POST" class="form-container">
                                 <div class="input-group">
